@@ -1,10 +1,9 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
+import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
 
 export function Console() {
-    let options = {
-        // "lineNumbers": 'off' // this is the line that breaks
-    }
+
     return (
         <div id="Console">
             <MonacoEditor
@@ -13,7 +12,7 @@ export function Console() {
                 language="cpp"
                 theme="vs-dark"
                 value=">"
-                options={options}
+                options={{ "lineNumbers": "off" }}
             />
         </div>)
 }
