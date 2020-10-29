@@ -1,8 +1,20 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
-import * as monaco from "monaco-editor/esm/vs/editor/editor.api";
+import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
+
+import './Console.css';
 
 export function Console() {
+
+    function setup(editor: monacoEditor.editor.IStandaloneCodeEditor) {
+        editor.addCommand(
+            monacoEditor.KeyCode.Enter,
+            _ => {
+                alert(editor.getValue())
+                editor.setValue("")
+            }
+        )
+    }
 
     return (
         <div id="Console">
@@ -11,8 +23,11 @@ export function Console() {
                 height="3ex"
                 language="cpp"
                 theme="vs-dark"
-                value=">"
-                options={{ "lineNumbers": "off" }}
+                options={{
+                    lineNumbers: _ => '>',
+                    minimap: { enabled: false },
+                }}
+                editorDidMount={setup}
             />
         </div>)
 }
