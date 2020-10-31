@@ -1,9 +1,9 @@
-import React from 'react';
-import './App.css';
-import { MainCode } from './MainCode';
-import { Console } from './Console';
+import React from "react";
+import "./App.css";
+import { MainCode } from "./MainCode";
+import { Console } from "./Console";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <div className="column">
@@ -12,6 +12,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
