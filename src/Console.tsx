@@ -1,6 +1,7 @@
 import React from 'react';
 import MonacoEditor from 'react-monaco-editor';
 import * as monacoEditor from "monaco-editor/esm/vs/editor/editor.api";
+import {Uint32} from './arm-simulator/primitives'
 
 import './Console.css';
 
@@ -10,7 +11,10 @@ export function Console() {
         editor.addCommand(
             monacoEditor.KeyCode.Enter,
             _ => {
-                alert(editor.getValue())
+                let first = new Uint32(22);
+                let intValue = parseInt(editor.getValue());
+                let second = new Uint32(intValue);
+                alert(first.add(second).toHex());
                 editor.setValue("")
             }
         )
