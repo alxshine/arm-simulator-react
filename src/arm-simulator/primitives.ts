@@ -37,6 +37,10 @@ class Uint32 {
         return new Uint32(this.value - other.value);
     }
 
+    multiply(other: Uint32) {
+        return new Uint32(this.value * other.value);
+    }
+
     toHex() {
         return this.value.toString(16).padStart(10, "0x00000000");
     }

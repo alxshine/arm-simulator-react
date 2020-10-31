@@ -14,7 +14,7 @@ export function Console() {
                 let first = new Uint32(22);
                 let intValue = parseInt(editor.getValue());
                 let second = new Uint32(intValue);
-                alert(first.add(second).toHex());
+                alert(first.multiply(second).toHex());
                 editor.setValue("")
             }
         )
