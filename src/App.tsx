@@ -10,6 +10,10 @@ const App: React.FC = () => {
         <MainCode />
         <Console />
       </div>
+
+      <div className="column">
+        Right Column
+      </div>
     </div>
   );
 };
