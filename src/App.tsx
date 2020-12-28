@@ -1,9 +1,13 @@
-import React from "react";
-import "./App.css";
-import { MainCode } from "./MainCode";
-import { Console } from "./Console";
+import React from 'react'
+import './App.css'
+import { MainCode } from './MainCode'
+import { Console } from './Console'
+import { Registers } from './Registers'
+import { Cpu, Register } from './arm-simulator/Cpu'
 
 const App: React.FC = () => {
+  const cpu : Cpu = new Cpu()
+
   return (
     <div className="App">
       <div className="column">
@@ -12,10 +16,10 @@ const App: React.FC = () => {
       </div>
 
       <div className="column">
-        Right Column
+        <Registers registers={cpu.registers} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
